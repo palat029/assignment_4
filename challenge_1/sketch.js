@@ -1,18 +1,47 @@
+
+
+var flowerSize = 50;
+
 function setup() {
-	// create a place to draw
-	createCanvas(640, 360);
+	createCanvas(640, 480);
 	noStroke();
-	noLoop();
 }
 
 function draw() {
-	// clear the background
-	background(50, 50, 150);
+	background(20, 220, 220);
+	fill(111, 187, 232);
+	rect(0, 300, 640, 300);
+	drawFlower(180, 200);
+	drawFlower(200, 300);
+	drawFlower(300, 350);
+	for (var i = 0; i < 30; i++) {
+		drawFlower(random(0, 640), random(200, 400));
 
-	// set a fill color
-	fill(255, 255, 255);
+	}
+	noLoop();
+}
 
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+
+function drawFlower(x,y) {
+	// stem
+	strokeWeight(8);
+	stroke(25,120, 60);
+	line(x, y, x, y + 100);
+
+	// outside ring
+	noStroke();
+	fill(255, 255, 255, 100);
+	ellipse(x, y, flowerSize, flowerSize);
+
+
+	// middle ring
+	fill(255, 255, 255, 130);
+	ellipse(x, y, flowerSize - 20, flowerSize - 20);
+
+    // inside ring
+	fill(250, 255, 255, 250);
+	ellipse(x, y, flowerSize - 40, flowerSize - 40);
+
+
+
 }
