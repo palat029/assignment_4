@@ -15,7 +15,7 @@ function draw() {
 	drawFlower(200, 300);
 	drawFlower(300, 350);
 	for (var i = 0; i < 30; i++) {
-		drawFlower(random(0, 640), random(200, 400));
+		drawFlower(random (640), i * 4 + 180);
 
 	}
 	noLoop();
